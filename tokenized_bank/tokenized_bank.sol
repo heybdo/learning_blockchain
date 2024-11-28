@@ -2,16 +2,13 @@
 
 pragma solidity >=0.8.2 <0.9.0;
 
-import "./ibank.sol";
+import "./Ibank.sol";
 import {BankToken} from "./BankToken.sol";
 import {IERC20} from "@openzeppelin/contracts/interfaces/IERC20.sol";
 
-contract TokenizedBank is ibank {
+contract TokenizedBank is Ibank {
 
     BankToken public bankToken;
-
-    // table with token to oracle
-    mapping (address token => address oracle) public oracles;
 
     constructor (string memory name, string memory symbol) {
         bankToken = new BankToken(name, symbol);
@@ -25,11 +22,15 @@ contract TokenizedBank is ibank {
         
         // transfer bank token to the user
         // calculate how many tokens the user receives, USD 1 is BT 1
+        // int256 mintAmount = IExchangeRateServce().getExchangeRate(token));
+
 
 
     }
     function withdraw(uint amount, address token) external {}
-    function exchangeRate(address oracle) external view returns (int256) {}
+    function exchangeRate(address oracle) external view returns (int256) {
+        
+    }
     function getBalance (address account, address token) external view returns (uint) {}
 
 }

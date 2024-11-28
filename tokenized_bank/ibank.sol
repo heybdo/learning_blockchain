@@ -2,7 +2,7 @@
 
 pragma solidity >=0.8.2 <0.9.0;
 
-interface ibank {
+interface Ibank {
     
     function withdraw(uint amount, address token) external;
     function deposit(uint amount, address token) external;
