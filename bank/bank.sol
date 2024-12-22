@@ -26,6 +26,8 @@ contract Bank is ibank {
         // update the users' balance 
         (accountBalances[msg.sender])[token] += amount;
 
+
+
     }
 
         function withdraw(uint amount, address token) external {
@@ -37,9 +39,6 @@ contract Bank is ibank {
         (accountBalances[msg.sender])[token] -= amount;
     }
     
-    function approvePayment(uint amount, address token) external {
-    
-    }
     
     function exchangeRate(address oracle) external view returns (int256) {
         // ask the oracle how much is the exchange rate
@@ -51,9 +50,6 @@ contract Bank is ibank {
 
     }
     
-    function exchange(address tokenA, address tokenB, uint amount) external {
-
-    }
 
     function getBalance (address account, address token) external view returns (uint) {
         return (accountBalances[account])[token];

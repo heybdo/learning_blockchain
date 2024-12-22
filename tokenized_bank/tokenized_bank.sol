@@ -5,6 +5,7 @@ pragma solidity >=0.8.2 <0.9.0;
 import "./Ibank.sol";
 import {BankToken} from "./BankToken.sol";
 import {IERC20} from "@openzeppelin/contracts/interfaces/IERC20.sol";
+import {ExchangeRateService} from "./ExchangeRateService.sol";
 
 contract TokenizedBank is Ibank {
 
